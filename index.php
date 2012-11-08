@@ -80,10 +80,10 @@ a.navred:hover { text-decoration: none; color: #ffffff; font-family: arial, cali
 <tr><td>
 
  
-  <?php
  
  
-    echo '<b><u><font face="Comic Sans MS"></font></u></b>
+ 
+   
 	
 	
 	<table border=0 align=left cellpadding=0 cellspacing=0>
@@ -110,6 +110,7 @@ a.navred:hover { text-decoration: none; color: #ffffff; font-family: arial, cali
 
 </center>
 	</td>
+
 	<td>
 		<table border=0 width=253 cellpadding=0 cellspacing=0>
 		<tr><td width=253 height=65 background="imagenes/cuadro_verde.jpg" align=center>
