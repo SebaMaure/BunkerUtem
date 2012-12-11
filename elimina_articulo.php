@@ -5,7 +5,7 @@ if(!isset($_SESSION['user'])){
 header("location:login.php");
 }
 include("funciones.php");
-
+include("conexion.php");
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">

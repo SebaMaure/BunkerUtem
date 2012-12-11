@@ -1,9 +1,5 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
-session_start();
-if(!isset($_SESSION['user'])){
-header("location:login.php");
-}
 include("funciones.php");
 include("conexion.php");
 ?>
@@ -46,19 +42,19 @@ include("conexion.php");
 	</div>
 	<div id="page">
 		<div id="content">
-		<form action="lista_articulo.php" method="post">
+		<form action="lista_prestamo.php" method="post">
 		  <?php
 		
-		$query = mysql_query("SELECT * FROM Prestamo where Estado = 'Entregado'");
+		$query = mysql_query("SELECT * FROM Prestamo where Estado = 'ocupado'");
 		$n = mysql_num_rows($query);
 		
 		if($n > 0)
 		{
-		echo '<table id="listar_devolucion">
-		<tr><td>Encargado</td><td>Recibe</td><td>Articulo</td><td>Fecha Devolucion</td><td>Solicitante</td></tr>';
+		echo '<table id="listar_prestamo">
+		<tr><td>Articulo</td><td>Encargado</td><td>Solicitante</td><td>Fecha Prestamo</td><td>Estado</td></tr>';
 		while ($info = mysql_fetch_array($query))
 		{
-			echo "<tr><td>$info[Usuario_Nombre]</td><td>$info[Usuario_Nombre1]</td><td>$info[Articulo]</td><td>$info[FechaEnt]</td><td>$info[NomSol]</td></tr>";
+			echo "<tr><td>$info[Articulo]</td><td>$info[Usuario_Nombre]</td><td>$info[NomSol]</td><td>$info[FechaPre]</td><td>$info[Estado]</td></tr>";
 		}
 		}
 		echo '</table>';

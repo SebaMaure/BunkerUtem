@@ -5,8 +5,9 @@ if(!isset($_SESSION['user'])){
 header("location:login.php");
 }
 include("funciones.php");
-
+include("conexion.php");
 ?>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,16 +26,9 @@ include("funciones.php");
 			globalOffsetY: 11,
 			offsetY: -15
 		});
-		 $('#slider').slidertron({
-			viewerSelector: '.viewer',
-			indicatorSelector: '.indicator span',
-			reelSelector: '.reel',
-			slidesSelector: '.slide',
-			speed: 'slow',
-			advanceDelay: 4000
-		});
-	});
+	});	
 </script>
+
 </head>
 <body>
 <div id="wrapper">
@@ -50,11 +44,32 @@ include("funciones.php");
 		<?php menu_horizontal(); ?>
 		<br class="clearfix" />
 	</div>
-	
 	<div id="page">
 		<div id="content">
-			<div class="box">
-			</div>
+		<form action="lista_usuario.php" method="post">
+		  <?php
+		
+		$query = mysql_query("SELECT * FROM Usuario ");
+		$n = mysql_num_rows($query);
+		
+		if($n > 0)
+		{
+		echo '<table id="listar_usuario">
+		<tr><td>Nombre</td><td>Cargo</tr>';
+		while ($info = mysql_fetch_array($query))
+		{
+			echo "<tr><td>$info[Nombre]</td><td>$info[Cargo]</td></tr>";
+		}
+		}
+		echo '</table>';
+		
+		?>
+		  </form>
+		<div class="box">
+		  
+		  </div>
+			
+			<br class="clearfix" />
 		</div>
 		<br class="clearfix" />
 	</div>

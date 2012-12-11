@@ -69,14 +69,14 @@ include("funciones.php");
 				<h2>Agregar Usuario </h2>
 			</div>			    		      
 		      <fieldset id="form">
-				<form>
+				<form action="agrega_usuario.php" method="post">
 				  <legend>Agregar Usuario</legend>
 					<label for="user">Nombre:</label>
-					<input class="texto" name="idart" id="idart" type="text" size="20" />
+					<input class="texto" name="nom" id="nom" type="text" size="20" />
 					<label for="pass">Cargo</label>
-					<input class="texto" name="tipo" id="tipo" type="text" size="20" />
+					<input class="texto" name="cargo" id="cargo" type="text" size="20" />
 					<label for="pass">Contraseña:</label>
-					<input class="texto" name="marca" id="marca" type="text" size="20" />
+					<input class="texto" name="pass" id="pass" type="text" size="20" />
 				
 					<img src="images/img_agregarusuario.png"/>
 					<input type="submit" style="background: transparent url(images/btn_agregar.png); width:139px; height:38px;" name="Submit" value="" />
@@ -89,8 +89,8 @@ $state = false;
 if ($_POST["action"] == "add") { 
     include ("conexion.php");
     
-    $que = "INSERT INTO `Articulo`(idArticulo, Tipo, Marca, Descripcion)";
-    $que.= "VALUES ('".$_POST['idart']."', '".$_POST['tipo']."', '".$_POST['marca']."','".$_POST['desc']."','".$_POST['estado']."','".$_POST['encar']."') ";
+    $que = "INSERT INTO `Usuario`(Nombre, Cargo, Password)";
+    $que.= "VALUES ('".$_POST['nom']."', '".$_POST['cargo']."', '".$_POST['pass']."') ";
     $res = mysql_query($que, $conexion) or die(mysql_error());
     $state= true;
 include ("cerrar_conexion.php");

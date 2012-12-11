@@ -46,11 +46,10 @@ include("conexion.php");
 	</div>
 	<div id="page">
 		<div id="content">
-		<form action="lista_articulo.php" method="post">Tipo: <input type="text" id="tipo" name="tipo" /><input type="submit" /></form>
-		<?php
-		if (!empty($_POST['tipo']))
-		{
-		$query = mysql_query("SELECT * FROM articulo WHERE Tipo='$_POST[tipo]'");
+		<form action="lista_articulo.php" method="post">
+		  <?php
+		
+		$query = mysql_query("SELECT * FROM articulo ");
 		$n = mysql_num_rows($query);
 		
 		if($n > 0)
@@ -63,12 +62,12 @@ include("conexion.php");
 		}
 		}
 		echo '</table>';
-		}
-		?>
 		
-			<div class="box">
-				
-			</div>
+		?>
+		  </form>
+		<div class="box">
+		  
+		  </div>
 			
 			<br class="clearfix" />
 		</div>

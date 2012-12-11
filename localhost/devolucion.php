@@ -41,35 +41,53 @@ include("conexion.php");
 		</div>
 	</div>
 	<div id="menu">
-		<?php menu_horizontal(); ?>
-		<br class="clearfix" />
+		<?php menu_horizontal(); ?><br class="clearfix" />
 	</div>
 	<div id="page">
+    <div class="box">
+				<h2>Devolución </h2>
+			</div>			    	
 		<div id="content">
 		<form action="devolucion.php" method="post">
-		  Articulo: 
-		  <input type="text" id="art" name="art" /><input type="submit" /></form>
+		  <p>Articulo:
+  <input type="text" id="art" name="art" />
+		  </p>
+		  <p>Recibe:
+            <select class="texto" name="recibe" id="recibe">
+                      <option></option>
+                      <option>Francisco Contreras</option>
+                      <option>Sebastian Maureira</option>
+			          <option>Gerson Leiva</option>
+			          <option>Andres Collinao</option>
+			          <option>Jorge Barriga</option>
+            </select>
+          </p>
+          <p>Fecha Recepcion:
+            <input type="text" id="fres" name="fres" />
+          </p>
+          <p>Hora Recepcion:
+            <input type="text" id="hres" name="hres" />
+          </p>
+          <p>Estado:
+            <input type="text" id="est" name="est" />
+          </p>
+          <p>
+<input type="submit" name="Submit" value="Enviar" class="botonenviar" />
+		  <input type="hidden" name="action" value="add" />          </p>
+		</form>
 		<?php
-		if (!empty($_POST['art']))
-		{
-		$query = mysql_query("SELECT * FROM prestamo WHERE Tipo='$_POST[art]' && Estado='ocupado'");
 		
-		$n = mysql_num_rows($query);
-		
-		if($n > 0)
-		{
-		echo '<table id="devolucion">
-		<tr><td>Codigo</td><td>Solicitante</td><td>Encargado</td><td>Estado</td></tr>';
-		while ($info = mysql_fetch_array($query))
-		{
-			echo "<tr><td>$info[Articulo]</td><td>$info[NomSol]</td><td>$info[Usuario_Nombre]</td><td>$info[Estado]</td></tr>";
-		}
-		}
-		echo '</table>';
-		}
-		?>
-		
-			<div class="box">
+						error_reporting(0);
+						$state = false;
+						if ($_POST["action"] == "add"){
+  					  		include ("conexion.php");
+    						$que = "UPDATE Prestamo SET Usuario_Nombre1 = '$_POST[recibe]', FechaEnt = '$_POST[fres]', HoraEnt = '$_POST[hres]', Estado = '$_POST[est]' WHERE Articulo = '$_POST[art]' AND Estado = 'ocupado' ";
+		$res = mysql_query($que, $conexion) or die(mysql_error());
+    						$state= true;
+							include ("cerrar_conexion.php");
+						}
+ 					?>
+		  <div class="box">
 				
 			</div>
 			
