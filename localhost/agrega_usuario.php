@@ -5,6 +5,7 @@ if(!isset($_SESSION['user'])){
 header("location:login.php");
 }
 include("funciones.php");
+
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -62,47 +63,50 @@ include("funciones.php");
 		<?php menu_horizontal(); ?>
 		<br class="clearfix" />
 	</div>
-<!--                                          Content                                   -->	
 	<div id="page">
 		<div id="content">
 			<div class="box">
-				<h2>Agregar Artículo </h2>
+				<h2>Agregar Usuario </h2>
 			</div>			    		      
 		      <fieldset id="form">
-				<form action="agrega_articulo.php" method="post">
-				  <legend>Agregar Artículo</legend>
-					
-					  <label for="user">Código:</label>
-					  <input class="texto" name="idart" id="idart" type="text" size="20" />
-					  <label for="pass">Tipo</label>
-					  <input class="texto" name="tipo" id="tipo" type="text" size="20" />
-					  <label for="pass">Marca:</label>
-					  <input class="texto" name="marca" id="marca" type="text" size="20" />
-					  <label for="pass">Descripción:</label>
-                      <textarea name="desc" cols="26" class="areadetexto" id="desc"></textarea>
-		          
-					 
-					  <input type="submit" name="Submit" value="" class="botonenviar" />
-					  <input type="hidden" name="action" value="add" />
-				  
-					<br />
+				<form action="agrega_usuario.php" method="post">
+				  <legend>Agregar Usuario</legend>
+					<label for="user">Nombre:</label>
+					<input class="texto" name="nom" id="nom" type="text" size="20" />
+					<label for="pass">Cargo</label>
+					<input class="texto" name="cargo" id="cargo" type="text" size="20" />
+					<label for="pass">Contraseña:</label>
+					<input class="texto" name="pass" id="pass" type="text" size="20" />
+				
+					<img src="images/img_agregarusuario.png"/>
+					<input type="submit" style="background: transparent url(images/btn_agregar.png); width:139px; height:38px;" name="Submit" value="" />
+					<input type="hidden" name="action" value="add" />
+			
 				</form>
-			    	<?php
-						error_reporting(0);
-						$state = false;
-						if ($_POST["action"] == "add"){
-  					  		include ("conexion.php");
-    						$que = "INSERT INTO `Articulo`(idArticulo, Tipo, Marca, Descripcion) VALUES ('$_POST[idart]','$_POST[tipo]','$_POST[marca]','$_POST[desc]') ";
-    						$res = mysql_query($que, $conexion) or die(mysql_error());
-    						$state= true;
-							include ("cerrar_conexion.php");
-						}
- 					?>
+			    <?php
+error_reporting(0);
+$state = false;
+if ($_POST["action"] == "add") { 
+    include ("conexion.php");
+    
+    $que = "INSERT INTO `Usuario`(Nombre, Cargo, Password)";
+    $que.= "VALUES ('".$_POST['nom']."', '".$_POST['cargo']."', '".$_POST['pass']."') ";
+    $res = mysql_query($que, $conexion) or die(mysql_error());
+    $state= true;
+include ("cerrar_conexion.php");
+
+}
+ ?>
 		      </fieldset>
 		      <div id="boton1">
+			    <p>&nbsp;		        </p>
+			    <p>&nbsp;</p>
 			  </div>
+			  <p>&nbsp;</p>
+		  
 			<br class="clearfix" />
 		</div>
+		
 		<br class="clearfix" />
 	</div>
 	<div id="page-bottom">

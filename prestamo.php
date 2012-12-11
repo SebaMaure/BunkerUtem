@@ -60,10 +60,10 @@ include("funciones.php");
 	<div id="page">
 		<div id="content">
 			<div class="box">
-				<h2>Préstamo </h2>
+				<h2>Préstamos / Devoluciones</h2>
 			</div>			    		      
-		      <fieldset id="form" style="height:400px;">
-				<form>
+		      <fieldset id="form">
+				<form action="prestamo.php" method="post">
 					<legend>Registro de Prestamo</legend>
 					<label for="user">Solicitante:</label>
 					<input class="texto" name="sol" id="sol" type="text" size="20" />
@@ -72,20 +72,33 @@ include("funciones.php");
 					<label for="pass">Encargado</label>
 					<select class="texto" name="encar" id="encar">
                       <option></option>
-			          <option>Andrés Collinao</option>
-			          <option>Felipe</option>
-			          <option>Maguilla</option>
+                      <option>Francisco Contreras</option>
+                      <option>Sebastian Maureira</option>
+			          <option>Gerson Leiva</option>
+			          <option>Andres Collinao</option>
+			          <option>Jorge Barriga</option>
                     </select>
 					<label for="pass">Fecha Prestamo:</label>
 					<input class="texto" name="fpres" id="fpres" type="text" size="20" />
 					<label for="pass">Hora Prestamo:</label>
 					<input class="texto" name="hpres" id="hpres" type="text" size="20" />
-					&nbsp;
 					<br />
-					<input class="botonenviar" name="insert" type="submit" value=""/> 
+					<br />
+					<input class="botonenviar" name="insert" type="submit" value=""/>
+					<input type="hidden" name="action" value="add" /> 
 				 </form>
+				 <?php
+						error_reporting(0);
+						$state = false;
+						if ($_POST["action"] == "add"){
+  					  		include ("conexion.php");
+    						$que = "INSERT INTO `Prestamo`(NomSol,Articulo ,Usuario_Nombre ,FechaPre, HoraPre, Estado ) VALUES ('$_POST[sol]','$_POST[art]','$_POST[encar]','$_POST[fpres]','$_POST[hpres]','ocupado') ";
+    						$res = mysql_query($que, $conexion) or die(mysql_error());
+    						$state= true;
+							include ("cerrar_conexion.php");
+						}
+ 					?>
 			   </fieldset>
-		      
 		      
 			  <div id="boton1"></div>
 		  

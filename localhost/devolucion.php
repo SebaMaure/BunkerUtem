@@ -46,20 +46,23 @@ include("conexion.php");
 	</div>
 	<div id="page">
 		<div id="content">
-		<form action="lista_articulo.php" method="post">Tipo: <input type="text" id="tipo" name="tipo" /><input type="submit" /></form>
+		<form action="devolucion.php" method="post">
+		  Articulo: 
+		  <input type="text" id="art" name="art" /><input type="submit" /></form>
 		<?php
-		if (!empty($_POST['tipo']))
+		if (!empty($_POST['art']))
 		{
-		$query = mysql_query("SELECT * FROM articulo WHERE Tipo='$_POST[tipo]'");
+		$query = mysql_query("SELECT * FROM prestamo WHERE Tipo='$_POST[art]' && Estado='ocupado'");
+		
 		$n = mysql_num_rows($query);
 		
 		if($n > 0)
 		{
-		echo '<table id="listar_articulo">
-		<tr><td>ID</td><td>Tipo</td><td>Marca</td><td>Descripcion</td></tr>';
+		echo '<table id="devolucion">
+		<tr><td>Codigo</td><td>Solicitante</td><td>Encargado</td><td>Estado</td></tr>';
 		while ($info = mysql_fetch_array($query))
 		{
-			echo "<tr><td>$info[idArticulo]</td><td>$info[Tipo]</td><td>$info[Marca]</td><td>$info[Descripcion]</td></tr>";
+			echo "<tr><td>$info[Articulo]</td><td>$info[NomSol]</td><td>$info[Usuario_Nombre]</td><td>$info[Estado]</td></tr>";
 		}
 		}
 		echo '</table>';
