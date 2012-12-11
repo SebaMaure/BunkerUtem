@@ -1,7 +1,7 @@
 <?php
 $dbhost="localhost";  
 $dbusuario="root"; 
-$dbpassword=""; 
+$dbpassword="ragnarok"; 
 
 $db="bunker";       
 $conexion = mysql_connect($dbhost, $dbusuario, $dbpassword);

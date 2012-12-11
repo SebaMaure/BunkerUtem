@@ -1,14 +1,4 @@
-﻿/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 3.0 License
-
-Name       : Big Business 2.0
-Description: A two-column, fixed-width design with a bright color scheme.
-Version    : 1.0
-Released   : 20120624
-*/
-
+﻿
 * {
 	margin: 0;
 	padding: 0;
@@ -229,8 +219,18 @@ ul h4 {
 	padding-bottom: 4px;
 }
 
-#menu ul li.active span b {
+#menu ul li a.active span b {
 	border-top-color: #161a50;
+}
+
+#Logout{
+float: right; 
+margin-top:15px; 
+text-decoration:underline;
+}
+#Logout A
+{
+	color:#FFFFFF;
 }
 
 .dropotron {
@@ -433,7 +433,7 @@ ul h4 {
 }
 
 
-#registrousuario {
+#form {
 background:transparent url(images/bgfieldset.png) no-repeat scroll top left;
 border:medium none;
 color:#333333;
@@ -441,8 +441,13 @@ height:665px;
 padding:0 0 0 50px;
 width:515px;
 }
+#form p{
+display:block;
+width:200px;
+height:50px;
+}
 
-#registrousuario legend {
+#form legend {
 color:#FFFFFF;
 font-family:arial;
 font-size:21px;
@@ -452,7 +457,7 @@ padding-top:8px;
 text-transform:capitalize;
 }
 
-#registrousuario input.texto {
+#form input.texto {
 background:#FFFFFF url(images/bg_input_texto.JPG) no-repeat scroll left top;
 border:medium none !important;
 color:#666666;
@@ -462,7 +467,7 @@ width:206px;
 font-family:arial,sans-serif;
 }
 
-#registrousuario textarea.areadetexto {
+#form textarea.areadetexto {
 background: #ffffff url(images/bg-textarea.gif) no-repeat scroll top left;
 width: 454px;
 height: 160px;
@@ -472,25 +477,25 @@ font-size:12px;
 font-family:arial,sans-serif;
 }
 
-#registrousuario label {
+#form label {
 display:block;
 font-family:arial,sans-serif;
 font-size:14px;
 padding:10px 0 3px;
 }
 
-#registrousuario input.botonenviar {
-background:transparent url(../images/bgbotonenviar.gif) no-repeat scroll left top;
+#form input.botonenviar {
+background:transparent url(images/boton_enviar.png) no-repeat scroll right top;
 border:medium none !important;
 color:#FFFFFF;
 display:block;
 float:left;
 font-family:arial,sans-serif;
-height:30px;
-margin-left:360px;
+height:35px;
+margin-left:240px;
 margin-top:20px;
 text-align:center;
-width:99px;
+width:124px;
 }
 
 
@@ -543,4 +548,12 @@ width:99px;
 .login-box-options a {
 	color: #ebebeb;
 	font-size: 11px;
+}
+#input_login
+{
+background-image: url('images/login-btn.png');
+width:103px;
+height:42px;
+margin-left:100px;
+border: none;
 }

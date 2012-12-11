@@ -1,14 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 3.0 License
-
-Name       : Big Business 2.0
-Description: A two-column, fixed-width design with a bright color scheme.
-Version    : 1.0
-Released   : 20120624
--->
+<?php
+include("funciones.php");
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta name="description" content="" />
@@ -48,67 +41,8 @@ Released   : 20120624
 		</div>
 	</div>
 	<div id="menu">
-		<ul>
-			<li class="first">
-				<span class="opener">Gestion<b></b></span>
-				<ul>
-					<li><a href="prestamo.php">Préstamo</a></li>
-					<li><a href="devolucion.php">Devolucion</a></li>					
-					<li>
-						<span>Usuario<b></b></span>
-						<ul>
-							<li><a href="agrega_usuario.php">Agregar</a></li>
-							<li><a href="elimina_usuario.php">Eliminar</a></li>						</ul>
-					</li>
-                    <li>
-						<span>Artículo<b></b></span>
-						<ul>
-							<li><a href="agrega_articulo.php">Agregar</a></li>
-							<li><a href="elimina_articulo.php">Eliminar</a></li>						</ul>
-					</li>						
-				</ul>
-			</li>
-			<li><span class="opener">Listar<b></b></span>
-            <ul>
-           	<li><a href="lista_prestamo.php">Préstamos</a></li>
-			<li><a href="lista_devolucion.php">Devoluciones</a></li>
-			<li><a href="lista_usuario.php">Usuarios</a></li>
-            <li><a href="lista_articulo.php">Artículos</a></li>
-			</ul>
-            </li>
-			<li><span class="opener">Buscar<b></b></span>
-            <ul>
-           	<li><a href="busca_prestamo.php">Préstamo</a></li>
-			<li><a href="busca_devolucion.php">Devolucione</a></li>
-			<li><a href="busca_usuario.php">Usuario</a></li>
-            <li><a href="busca_articulo.php">Artículo</a></li>
-			</ul>
-            </li>
-			<li>
-				<span class="opener">4.<b></b></span>
-				<ul>
-					<li><a href="#">4.1.</a></li>
-					<li><a href="#">4.2.</a></li>
-					<li><a href="#">4.3.</a></li>
-					<li>
-						<span>4.4.<b></b></span>
-						<ul>
-							<li><a href="#">4.4.1.</a></li>
-							<li><a href="#">4.4.2.</a></li>
-							<li><a href="#">4.4.3.</a></li>
-							<li><a href="#">4.4.4.</a></li>
-							<li><a href="#">4.4.5.</a></li>
-							<li><a href="#">4.4.6.</a></li>
-						</ul>
-					</li>
-					<li><a href="#">4.5.</a></li>
-					<li><a href="#">4.6.</a></li>
-				</ul>
-			</li>
-			<li><a href="#">5.</a></li>
-			<li class="last"><a href="#">6.</a></li>
-		</ul>
-		<br class="clearfix" />
+	<?php menu_horizontal(); ?>
+	<br class="clearfix" />
 	</div>
 	<div id="slider">
 		<div class="viewer">

@@ -1,14 +1,9 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 3.0 License
 
-Name       : Big Business 2.0
-Description: A two-column, fixed-width design with a bright color scheme.
-Version    : 1.0
-Released   : 20120624
--->
+<?php
+include("funciones.php");
+?>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta name="description" content="" />
@@ -48,177 +43,18 @@ Released   : 20120624
 		</div>
 	</div>
 	<div id="menu">
-		<ul>
-			<li class="first">
-				<span class="opener">Gestion<b></b></span>
-				<ul>
-					<li><a href="prestamo.php">Préstamo</a></li>
-					<li><a href="devolucion.php">Devolucion</a></li>					
-					<li>
-						<span>Usuario<b></b></span>
-						<ul>
-							<li><a href="agrega_usuario.php">Agregar</a></li>
-							<li><a href="elimina_usuario.php">Eliminar</a></li>						</ul>
-					</li>
-                    <li>
-						<span>Artículo<b></b></span>
-						<ul>
-							<li><a href="agrega_articulo.php">Agregar</a></li>
-							<li><a href="elimina_articulo.php">Eliminar</a></li>						</ul>
-					</li>						
-				</ul>
-			</li>
-			<li><span class="opener">Listar<b></b></span>
-            <ul>
-           	<li><a href="lista_prestamo.php">Préstamos</a></li>
-			<li><a href="lista_devolucion.php">Devoluciones</a></li>
-			<li><a href="lista_usuario.php">Usuarios</a></li>
-            <li><a href="lista_articulo.php">Artículos</a></li>
-			</ul>
-            </li>
-			<li><span class="opener">Buscar<b></b></span>
-            <ul>
-           	<li><a href="busca_prestamo.php">Préstamo</a></li>
-			<li><a href="busca_devolucion.php">Devolucione</a></li>
-			<li><a href="busca_usuario.php">Usuario</a></li>
-            <li><a href="busca_articulo.php">Artículo</a></li>
-			</ul>
-            </li>
-			<li>
-				<span class="opener">4.<b></b></span>
-				<ul>
-					<li><a href="#">4.1.</a></li>
-					<li><a href="#">4.2.</a></li>
-					<li><a href="#">4.3.</a></li>
-					<li>
-						<span>4.4.<b></b></span>
-						<ul>
-							<li><a href="#">4.4.1.</a></li>
-							<li><a href="#">4.4.2.</a></li>
-							<li><a href="#">4.4.3.</a></li>
-							<li><a href="#">4.4.4.</a></li>
-							<li><a href="#">4.4.5.</a></li>
-							<li><a href="#">4.4.6.</a></li>
-						</ul>
-					</li>
-					<li><a href="#">4.5.</a></li>
-					<li><a href="#">4.6.</a></li>
-				</ul>
-			</li>
-			<li><a href="#">5.</a></li>
-			<li class="last"><a href="#">6.</a></li>
-		</ul>
+		<?php menu_horizontal(); ?>
 		<br class="clearfix" />
 	</div>
-	<div id="slider">
-		<div class="viewer">
-			<div class="reel">
-				<div class="slide">
-					<img src="images/slide01.jpg" alt="" />
-				</div>
-				<div class="slide">
-					<img src="images/slide02.jpg" alt="" />
-				</div>
-				<div class="slide">
-					<img src="images/slide03.jpg" alt="" />
-				</div>
-				<div class="slide">
-					<img src="images/slide04.jpg" alt="" />
-				</div>
-				<div class="slide">
-					<img src="images/slide05.jpg" alt="" />
-				</div>
-			</div>
-		</div>
-		<div class="indicator">
-			<span>1</span>
-			<span>2</span>
-			<span>3</span>
-			<span>4</span>
-			<span>5</span>
-		</div>
-	</div>
+	
 	<div id="page">
 		<div id="content">
 			<div class="box">
-				<h2>Welcome to Big Business 2.0</h2>
-				<p>
-					parrafo
-                </p>
-			</div>
-			<div class="box" id="content-box1">
-				<h3>Columna 1</h3>
-				<ul class="section-list">
-					<li class="first">
-						<img class="pic alignleft" src="images/pic01.jpg" width="70" height="70" alt="" />
-						<span>parrafo de imagen alineada a la izq.</span>
-					</li>
-					<li>
-						<img class="pic alignleft" src="images/pic02.jpg" width="70" height="70" alt="" />
-						<span>parrafo de imagen alineada a la izq.</span>
-					</li>
-					<li class="last">
-						<img class="pic alignleft" src="images/pic03.jpg" width="70" height="70" alt="" />
-						<span>parrafo de imagen alineada a la izq.</span>
-					</li>
-				</ul>
-			</div>
-			<div class="box" id="content-box2">
-				<h3>Columna 2</h3>
-				<p>
-					opciones links.
-				</p>
-				<ul class="list">
-					<li class="first"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li class="last"><a href="#">5</a></li>
-				</ul>
-			</div>
-			<br class="clearfix" />
-		</div>
-		<div id="sidebar">
-			<div class="box">
-				<h3>Titulo</h3>
-				<ul class="list">
-					<li class="first"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li class="last"><a href="#">5</a></li>
-				</ul>
-			</div>
-			<div class="box">
-				<h3>Entradas</h3>
-				<div class="date-list">
-					<ul class="list date-list">
-						<li class="first"><span class="date">2/08</span> <a href="#">1.fecha</a></li>
-						<li><span class="date">2/05</span> <a href="#">2.fecha</a></li>
-						<li><span class="date">2/05</span> <a href="#">3.fecha</a></li>
-						<li><span class="date">2/01</span> <a href="#">4.fecha</a></li>
-						<li class="last"><span class="date">1/31</span> <a href="#">5.fecha</a></li>
-					</ul>
-				</div>
 			</div>
 		</div>
 		<br class="clearfix" />
 	</div>
 	<div id="page-bottom">
-		<div id="page-bottom-content">
-			<h3>Bottom</h3>
-			<p>
-				descripciones
-            </p>
-		</div>
-		<div id="page-bottom-sidebar">
-			<h3>Menu</h3>
-			<ul class="list">
-				<li class="first"><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li class="last"><a href="#">3</a></li>
-			</ul>
-		</div>
 		<br class="clearfix" />
 	</div>
 </div>
